@@ -141,26 +141,24 @@ cartButton.onclick = () => {
   );
 };
 
-var whatsapplink ="https://api.whatsapp.com/send?phone=919999999999&text=Order%20details" ;
+var whatsapplink ="https://api.whatsapp.com/send?phone=916002759990&text=Order%20details" 
 
 //chaning whatsapp link to write text
 function updateWhatsappLink(){
     for(let i=0;i<items.length;i++){
         if(items[i].quantity != 0){
-            whatsapplink += "%0A"+items[i].name + "%0A"+ items[i].quantity;
+            whatsapplink += "%0A"+items[i].name + "%0A"+ items[i].quantity
         }
     } 
-    
-    whatsapplink +="%0A"+"Total%0APrice"+finalDollars+"%0A"+finalCents;
-
+    whatsapplink +="%0A"+"Total%0APrice"+finalDollars+"%0A"+finalCents
 }
 
 //onclick func for opening whatsapp link
 cart.onclick=()=>{
-    updatePrice();
-    updateWhatsappLink();
-    window.open(whatsapplink,"_blank");
-
+    updatePrice()
+    updateWhatsappLink()
+    window.open(whatsapplink,"_blank")
+  
     for(let i=0;i<items.length;i++){
         if(items[i].quantity !==0){
             console.log("Items Name: "+ items[i].name +"Items Quantity: "+ items[i].quantity)
